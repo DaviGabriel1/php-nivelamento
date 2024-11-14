@@ -40,9 +40,58 @@
         unset($array3[3]); //deleta elemento do array
 
 
+        /* Lógicas */
 
+        $x = 1;
+        $y = 2;
+        $x = $y; // $x agora contém o mesmo valor de $y
+        $z = &$y;
+        // $z agora contém uma referência para $y. Mudando o valor de
+        // $z irá mudar o valor de $y também, e vice-versa.
+        // $x irá permanecer inalterado com o valor original de $y
 
+        var_dump($z); //imprime tipo e valor
 
+        $a = 0;
+        $b = '0';
+        $c = '1';
+        $d = '1';
+
+        // assert lança um aviso se o seu argumento não é verdadeiro
+        echo assert($a == $b); // igualdade
+        echo assert($c != $a); // desigualdade
+        echo assert($c <> $a); // alternativa para desigualdade
+        echo assert($a < $c);
+        echo assert($c > $b);
+        echo assert($a <= $b);
+        echo assert($c >= $d);
+
+        //só serão verdadeiras se os valores são iguais e do mesmo tipo.
+        echo assert($c === $d);
+        echo assert($a !== $d);
+        echo assert(1 == '1');
+        echo assert(1 !== '1');
+        // As variáveis podem ser convertidas entre tipos, dependendo da sua utilização.
+
+        $inteiro = 1;
+        echo $inteiro + $inteiro; // Imprime => 2
+
+        $string = '1';
+        echo $string + $string; // Imprime => 2 (strings são coagidas para inteiros)
+
+        // Tipo de fundição pode ser utilizado para tratar uma variável 
+        // como um outro tipo
+
+        $booleano = (boolean) 1; // => true
+
+        $zero = 0;
+        $booleano = (boolean) $zero; // => false
+
+        // Há também funções dedicadas para fundir a maioria dos tipos
+        $inteiro = 5;
+        $string = strval($inteiro);
+
+        $var = null; // valor Null
 
 
         ?>
