@@ -199,7 +199,24 @@
 
 
 
+        $carro = array("rodas" => 4,"placa" => 'ABC1234');
 
+        $rodas = &$carro['rodas'];
+    
+        foreach($carro as $prop ){
+            echo $prop.",";
+        }
+    
+        $carro['rodas'] = 6;
+    
+    
+        print "$rodas";
+    
+        print_r($carro);
+    
+        $rodas = 4;
+    
+        print_r($carro);
 
         ?>
 </body>
