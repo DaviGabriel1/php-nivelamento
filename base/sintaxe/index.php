@@ -10,7 +10,7 @@
         //echo phpinfo(); informa versão e etc sobre o php
         //echo "ola "."mundo" concatenação 
         $nome = "Davi";
-        echo "meu nome é $nome";
+        echo "meu nome é $nome\n";
         $texto = <<< 'FIM'
         Este é um exemplo de nowdoc.
         Ele não vai interpretar $variaveis ou \n novas linhas.
@@ -94,6 +94,115 @@
         $var = null; // valor Null
 
 
+        /* CONTROLE DE FLUXO */
+
+        if (true) {
+            print 'Eu fico impresso';
+        }
+        
+        if (false) {
+            print 'Eu não\'t';
+        } else {
+            print 'Eu fico impresso';
+        }
+        
+        if (false) {
+            print 'Não fica impresso';
+        } elseif(true) {
+            print 'Fica';
+        }
+        
+        // operadores ternários
+        print (false ? 'Não fica impresso' : 'Fica');
+        
+        $x = 0;
+        if ($x === '0') {
+            print 'Não imprime';
+        } elseif($x == '1') {
+            print 'Não imprime';
+        } else {
+            print 'Imprime';
+        }
+    ?>
+        <?php if(true): ?> <!-- MUITO USADO EM TEMPLATES -->
+            isto é exibido se for verdadeiro
+        <?php else: ?>
+            Isto é imprimido caso contrário
+        <?php endif; ?>
+
+        <?php
+                    
+        $flag = 0;            
+        switch ($flag) {
+            case '0':
+                print 'Switch faz coerção de tipo';
+                break; 
+            case 'dois':
+            case 'tres':
+                // Faz alguma coisa, se a variável é 'dois' ou 'tres'
+                break;
+            default:
+                // Faz algo por padrão
+        }
+
+        // While, do...while e for são repetições provavelmente familiares
+        $i = 0;
+        while ($i < 5) {
+            echo $i++;
+        }; // Imprime "01234"
+
+        echo "\n";
+
+        $i = 0;
+        do {
+            echo $i++;
+        } while ($i < 5); // Imprime "01234"
+
+        echo "\n";
+
+        for ($x = 0; $x < 10; $x++) {
+            echo $x;
+        } // Imprime "0123456789"
+
+        echo "\n";
+
+        $rodas = ['bicicleta' => 2, 'carro' => 4];
+
+        // Repetições foreach podem iterar sobre arrays
+        foreach ($rodas as $contador_rodas) {
+            echo $contador_rodas;
+        } // Imprime "24"
+
+        echo "\n";
+
+        // pode iterar tanto chave quanto valores
+        foreach ($rodas as $veiculo => $contador_rodas) {
+            echo "O $veiculo tem $contador_rodas rodas";
+        }
+
+        echo "\n";
+
+        $i = 0;
+        while ($i < 5) {
+            if ($i === 3) {
+                break; // Sai da repetição
+            }
+            echo $i++;
+        } // Imprime "012"
+
+        for ($i = 0; $i < 5; $i++) {
+            if ($i === 3) {
+                continue; // Ignora esta iteração da repetição
+            }
+            echo $i;
+        } // Imprime "0124"
+
+
+
+
+
         ?>
 </body>
 </html>
+
+        
