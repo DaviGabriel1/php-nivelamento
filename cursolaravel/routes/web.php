@@ -1,11 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdutoController;
 
+Route::get("/",[ProdutoController::class,"index"])->name("produto.index");
+Route::get("/produto/{id?}",[ProdutoController::class,"show"])->name("produto.show")
+
+/*
 Route::get('/', function () {
     return redirect()->route("admin.clientes");
 });
-
 
 Route::group([ #group: junção do route e name
     "prefix"=> "admin",
@@ -55,6 +59,6 @@ Route::get("/news",function(){
 
 Route::get("/novidades",function(){
     return redirect()->route("noticias");
-});
+});*/
 
 ?>
