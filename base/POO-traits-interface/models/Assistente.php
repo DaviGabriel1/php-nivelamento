@@ -7,6 +7,9 @@
         }
 
         public function calcularSalario(){
+            if(is_null($this->salarioBase)){
+                throw new Exception("erro ao calcularSalario");
+            }
             return $this->salarioBase*1.25+300;
         }
     }
