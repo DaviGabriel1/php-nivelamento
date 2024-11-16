@@ -3,8 +3,28 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route("admin.clientes");
 });
+
+
+Route::group([ #group: junção do route e name
+    "prefix"=> "admin",
+    "as" => "admin."
+],function(){ # Route::prefix("admin"): todas as rotas dessa function será /admin/x
+    Route::get("dashboard",function(){ # Route::name("admin."): todas as rotas terá como nome admin.X
+        return "dashboard";
+    })->name("dashboard");
+
+    Route::get("users",function(){
+        return "users";
+    })->name("users");
+
+    Route::get("clientes",function(){
+        return "clientes";
+    })->name("clientes");
+
+});
+
 
 Route::get("/empresa",function(){
     return view("site/empresa");
