@@ -27,7 +27,7 @@ class ProdutoController extends Controller
             "html" => $html
         ]);*/
 
-        return view("site/layout", compact("nome","idade","html"));
+        return view("site.home", compact("nome","idade","html"));
     }
 
     /**
