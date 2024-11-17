@@ -60,9 +60,16 @@
 
     @forelse ($frutas as $fruta)
         <span>{{$fruta}} , </span>
-
-    @empty
-        array está vazio
+        @empty
+        <h1>não tem frutas</h1>
     @endforelse
+
+    @include("includes.mensagem",['titulo' => 'Mensagem de sucesso'])
+
+    @component('components.sidebar')
+        @slot('paragrafo')
+            texto qualquer vindo do slot
+        @endslot
+    @endcomponent
 
 @endsection
