@@ -12,24 +12,9 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        //return "index";
+       $produtos = Produto::all();
 
-        //$produtos = Produto::all(); //all é um método do eloquent (ORM do laravel)
-        //return dd($produtos); //debuga produtos
-
-        $nome = "davi";
-        $idade = 19;
-        $html = "<h1> eu sou um h1 </h1>";
-
-        /*return view("empresa",[
-            "nome" => $nome,
-            "idade" => $idade,
-            "html" => $html
-        ]);*/
-
-        $frutas = [];
-
-        return view("site.home", compact("nome","idade","html","frutas"));
+        return view("site.home", compact("produtos"));
     }
 
     /**
