@@ -12,9 +12,7 @@ Route::get('/', function () {
 
 Route::group([ #group: junção do route e name
     "prefix"=> "admin",
-    "as" => "admin."
-],function(){ # Route::prefix("admin"): todas as rotas dessa function será /admin/x
-    Route::get("dashboard",function(){ # Route::name("admin."): todas as rotas terá como nome admin.X
+    "as" => "admin."board",function(){ # Route::name("admin."): todas as rotas terá como nome admin.X
         return "dashboard";
     })->name("dashboard");
 

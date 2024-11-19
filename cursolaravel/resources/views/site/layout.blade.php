@@ -8,8 +8,3 @@
 <body>
 
 @yield('conteudo')
-
-
-
-</body>
-</html>
